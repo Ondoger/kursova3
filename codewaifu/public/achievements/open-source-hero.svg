@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="OPEN SOURCE achievement">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="18" x2="238" y2="238" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#05050a"/>
+      <stop offset="0.45" stop-color="#15152a"/>
+      <stop offset="1" stop-color="#05050a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="34" y1="34" x2="222" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#94a3b8"/>
+      <stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#94a3b8" stop-opacity="0.7"/>
+      <stop offset="0.55" stop-color="#475569" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#05050a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#94a3b8" flood-opacity="0.85"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="42" fill="url(#bg)"/>
+  <rect x="16" y="16" width="224" height="224" rx="34" fill="url(#glow)"/>
+  <rect x="18" y="18" width="220" height="220" rx="32" fill="none" stroke="url(#accent)" stroke-width="4"/>
+  <path d="M128 34 151 83 204 90 166 128 175 181 128 156 81 181 90 128 52 90 105 83Z" fill="url(#accent)" opacity="0.16"/>
+  <circle cx="128" cy="112" r="62" fill="#05050a" opacity="0.58" stroke="url(#accent)" stroke-width="3" filter="url(#shadow)"/>
+  <text x="128" y="126" text-anchor="middle" dominant-baseline="middle" font-family="Orbitron, Segoe UI Emoji, Apple Color Emoji, sans-serif" font-size="54" font-weight="900" fill="#ffffff" filter="url(#shadow)">OS</text>
+  <text x="128" y="205" text-anchor="middle" font-family="Orbitron, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="2.5" fill="#94a3b8">OPEN SOURCE</text>
+  <path d="M44 224C84 203 172 203 212 224" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.55"/>
+</svg>
