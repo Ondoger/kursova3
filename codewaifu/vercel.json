@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": "server/api/**"
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api/.*).*)",
