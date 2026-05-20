@@ -10,7 +10,6 @@ export function Login() {
   const devLogin = useStore((s) => s.devLogin);
   const authLoading = useStore((s) => s.authLoading);
   const authError = useStore((s) => s.authError);
-  const canUseDevLogin = import.meta.env.DEV || import.meta.env.VITE_ENABLE_DEMO_LOGIN === "true";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -101,31 +100,29 @@ export function Login() {
           {authLoading ? "Входимо..." : "Увійти"}
         </button>
 
-        {canUseDevLogin && (
-          <div className="mt-4 pt-4 border-t border-[#30363d]">
-            <div className="text-[12px] text-gh-muted text-center mb-2">
-              Швидкий тестовий вхід без email і пароля
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleDevLogin("student")}
-                disabled={authLoading}
-                className="btn-gh justify-center text-[13px]"
-              >
-                Студент
-              </button>
-              <button
-                type="button"
-                onClick={() => handleDevLogin("teacher")}
-                disabled={authLoading}
-                className="btn-gh justify-center text-[13px]"
-              >
-                Викладач
-              </button>
-            </div>
+        <div className="mt-4 pt-4 border-t border-[#30363d]">
+          <div className="text-[12px] text-gh-muted text-center mb-2">
+            Швидкий тестовий вхід без email і пароля
           </div>
-        )}
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => handleDevLogin("student")}
+              disabled={authLoading}
+              className="btn-gh justify-center text-[13px]"
+            >
+              Студент
+            </button>
+            <button
+              type="button"
+              onClick={() => handleDevLogin("teacher")}
+              disabled={authLoading}
+              className="btn-gh justify-center text-[13px]"
+            >
+              Викладач
+            </button>
+          </div>
+        </div>
       </form>
     </AuthLayout>
   );
