@@ -2,13 +2,13 @@ import { routes } from "../server/api-route-manifest.js";
 
 function getRequestPath(req) {
   const url = new URL(req.url || "/", "http://localhost");
-  if (url.pathname.startsWith("/api/")) {
-    return url.pathname.slice("/api/".length);
-  }
   const dynamicPath = req.query?.path;
   if (Array.isArray(dynamicPath)) return dynamicPath.join("/");
   if (dynamicPath) return String(dynamicPath);
   if (url.searchParams.get("path")) return url.searchParams.get("path");
+  if (url.pathname.startsWith("/api/")) {
+    return url.pathname.slice("/api/".length);
+  }
   if (url.pathname === "/api") return "";
   return String(dynamicPath || url.pathname).replace(/^\/+/, "");
 }
