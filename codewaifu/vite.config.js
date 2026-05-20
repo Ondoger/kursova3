@@ -171,7 +171,7 @@ function vercelApiDevServer() {
   return {
     name: "vercel-api-dev-server",
     configureServer(server) {
-      const apiRoot = path.resolve(process.cwd(), "api");
+      const apiRoot = path.resolve(process.cwd(), "server/api");
 
       server.middlewares.use(async (req, res, next) => {
         if (!req.url || !req.url.startsWith("/api/")) return next();
