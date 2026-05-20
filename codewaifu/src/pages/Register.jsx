@@ -17,6 +17,7 @@ export function Register() {
   const devLogin = useStore((s) => s.devLogin);
   const authLoading = useStore((s) => s.authLoading);
   const authError = useStore((s) => s.authError);
+  const canUseDemoLogin = import.meta.env.DEV || import.meta.env.VITE_ENABLE_DEMO_LOGIN === "true";
   const [quickLogin, setQuickLogin] = useState(null);
 
   const [role, setRole] = useState("student");
@@ -59,7 +60,7 @@ export function Register() {
           </Link>
         </>
       }
-      side={
+      side={canUseDemoLogin ? (
         <section className="bg-[#161b22] border border-[#30363d] rounded-md p-4">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div>
@@ -98,7 +99,7 @@ export function Register() {
             ))}
           </div>
         </section>
-      }
+      ) : null}
     >
       <form onSubmit={handleSubmit} noValidate>
         <FormField label="Хто ти?">

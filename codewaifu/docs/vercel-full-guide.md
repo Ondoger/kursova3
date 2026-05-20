@@ -399,7 +399,18 @@ GITHUB_CLIENT_SECRET=...
 ```env
 GITHUB_PAT=...
 MONGODB_DNS=...
+ENABLE_DEMO_LOGIN=true
+VITE_ENABLE_DEMO_LOGIN=true
 ```
+
+Для demo-кнопок тестового входу на Vercel потрібні обидві змінні:
+
+```env
+ENABLE_DEMO_LOGIN=true
+VITE_ENABLE_DEMO_LOGIN=true
+```
+
+`ENABLE_DEMO_LOGIN` вмикає backend endpoint `/api/auth/dev-login`, а `VITE_ENABLE_DEMO_LOGIN` показує кнопки в інтерфейсі.
 
 Повний рекомендований набір:
 
@@ -412,6 +423,8 @@ VITE_GITHUB_CLIENT_ID=...
 GITHUB_CLIENT_ID=...
 GITHUB_CLIENT_SECRET=...
 GITHUB_PAT=...
+ENABLE_DEMO_LOGIN=true
+VITE_ENABLE_DEMO_LOGIN=true
 ```
 
 ---

@@ -8,7 +8,7 @@ import {
 } from "../_lib/auth.js";
 
 function isDevAllowed() {
-  return process.env.NODE_ENV !== "production";
+  return process.env.NODE_ENV !== "production" || process.env.ENABLE_DEMO_LOGIN === "true";
 }
 
 const TEST_STUDENTS = [

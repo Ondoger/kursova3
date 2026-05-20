@@ -10,7 +10,7 @@ export function Login() {
   const devLogin = useStore((s) => s.devLogin);
   const authLoading = useStore((s) => s.authLoading);
   const authError = useStore((s) => s.authError);
-  const canUseDevLogin = import.meta.env.DEV;
+  const canUseDevLogin = import.meta.env.DEV || import.meta.env.VITE_ENABLE_DEMO_LOGIN === "true";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

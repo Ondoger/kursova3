@@ -57,7 +57,7 @@ export default async function apiRouter(req, res) {
       return res.status(500).json({ error: `Handler for /api/${requestPath} has no default export` });
     }
 
-    return match.handler(req, res);
+    return await match.handler(req, res);
   } catch (err) {
     console.error("[api-router] unhandled error:", err);
     if (!res.headersSent) {
