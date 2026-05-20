@@ -45,6 +45,14 @@ export default async function handler(req, res) {
     return res.status(503).json({
       ok: false,
       error: err instanceof Error ? err.message : String(err),
+      env: {
+        nodeEnv: process.env.NODE_ENV || null,
+        hasMongoDbUri: Boolean(process.env.MONGODB_URI),
+        hasMongoDbUrl: Boolean(process.env.MONGODB_URL),
+        hasMongoUri: Boolean(process.env.MONGO_URI),
+        hasDatabaseUrl: Boolean(process.env.DATABASE_URL),
+        vercelEnv: process.env.VERCEL_ENV || null,
+      },
     });
   }
 }

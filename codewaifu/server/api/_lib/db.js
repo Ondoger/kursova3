@@ -41,12 +41,14 @@ patchDnsIfBroken();
  * NEVER call `mongoose.connect()` per-request without this — Atlas will
  * exhaust its connection limit very fast.
  */
-const MONGODB_URI = process.env.MONGODB_URI;
+function getMongoUri() {
+  return process.env.MONGODB_URI || process.env.MONGODB_URL || process.env.MONGO_URI || process.env.DATABASE_URL;
+}
 
-if (!MONGODB_URI && process.env.NODE_ENV !== "test") {
+if (!getMongoUri() && process.env.NODE_ENV !== "test") {
   // We don't throw here at import time — that would crash *every* function
   // even if it doesn't need the DB. Throw lazily inside connectToDatabase().
-  console.warn("[db] MONGODB_URI is not set");
+  console.warn("[db] MongoDB connection env is not set");
 }
 
 const cache = globalThis.__gqMongoose ?? { conn: null, promise: null };
@@ -89,7 +91,8 @@ export async function connectToDatabase() {
     return cache.conn;
   }
 
-  if (!MONGODB_URI) {
+  const mongoUri = getMongoUri();
+  if (!mongoUri) {
     throw new Error(
       "MONGODB_URI is not configured. Set it in .env.local (dev) or Vercel project env (prod).",
     );
@@ -97,7 +100,7 @@ export async function connectToDatabase() {
 
   if (!cache.promise) {
     cache.promise = mongoose
-      .connect(MONGODB_URI, {
+      .connect(mongoUri, {
         // Conservative pool — serverless functions are short-lived.
         maxPoolSize: 5,
         minPoolSize: 0,
