@@ -50,21 +50,21 @@ export function ShareableCard({
         className="relative overflow-hidden rounded-2xl p-5 select-none"
         style={{
           background:
-            "linear-gradient(135deg, #0d0b0f 0%, #14100e 42%, #1a1215 100%)",
-          border: "1px solid rgba(232,160,180,0.15)",
+            "linear-gradient(135deg, #0d1117 0%, #161b22 42%, #0d1117 100%)",
+          border: "1px solid rgba(88, 166, 255,0.15)",
           boxShadow:
-            "0 0 40px rgba(232,160,180,0.08), inset 0 1px 0 rgba(255,220,200,0.04)",
+            "0 0 40px rgba(88, 166, 255,0.08), inset 0 1px 0 rgba(255, 255, 255,0.04)",
         }}
       >
         {/* Decorative corner patterns */}
         <div className="absolute top-0 left-0 w-20 h-20 opacity-[0.06] pointer-events-none">
           <svg viewBox="0 0 80 80" fill="none">
-            <path d="M0 0 L80 0 L0 80Z" fill="#e8a0b4" />
+            <path d="M0 0 L80 0 L0 80Z" fill="#58a6ff" />
           </svg>
         </div>
         <div className="absolute bottom-0 right-0 w-20 h-20 opacity-[0.06] pointer-events-none rotate-180">
           <svg viewBox="0 0 80 80" fill="none">
-            <path d="M0 0 L80 0 L0 80Z" fill="#c4956a" />
+            <path d="M0 0 L80 0 L0 80Z" fill="#d29922" />
           </svg>
         </div>
 
@@ -85,7 +85,7 @@ export function ShareableCard({
             <div
               className="absolute -bottom-1 -right-1 w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold font-jp"
               style={{
-                background: "#0d0b0f",
+                background: "#0d1117",
                 border: `2px solid ${tier.color}`,
                 color: tier.color,
               }}
@@ -170,9 +170,9 @@ export function ShareableCard({
         {/* Footer branding */}
         <div
           className="mt-4 pt-3 flex items-center justify-between relative z-10"
-          style={{ borderTop: "1px solid rgba(232,160,180,0.08)" }}
+          style={{ borderTop: "1px solid rgba(88, 166, 255,0.08)" }}
         >
-          <span className="text-[10px] text-white/20 font-jp">桜 GitQuest</span>
+          <span className="text-[10px] text-white/20 font-jp"> GitQuest</span>
           <span className="text-[10px] text-white/15 font-mono">
             github.com/{user.login}
           </span>
@@ -186,7 +186,7 @@ export function ShareableCard({
           whileTap={{ scale: 0.97 }}
           onClick={copyText}
           className="btn-brush flex-1 py-2.5 rounded-xl text-sm font-jp font-bold transition-all bg-white/[0.03] border hover:bg-white/[0.06] text-white/60 hover:text-white/80"
-          style={{ borderColor: "rgba(232,160,180,0.15)" }}
+          style={{ borderColor: "rgba(88, 166, 255,0.15)" }}
         >
           {copied ? "✓ Скопійовано!" : "📋 Копіювати текст"}
         </motion.button>
@@ -198,7 +198,7 @@ export function ShareableCard({
             window.open(url, "_blank");
           }}
           className="px-4 py-2.5 rounded-xl text-sm font-jp font-bold transition-all bg-white/[0.03] border hover:bg-white/[0.06] text-white/60 hover:text-white/80"
-          style={{ borderColor: "rgba(232,160,180,0.15)" }}
+          style={{ borderColor: "rgba(88, 166, 255,0.15)" }}
         >
           ↗ GitHub
         </motion.button>

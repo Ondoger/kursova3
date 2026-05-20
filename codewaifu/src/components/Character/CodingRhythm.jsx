@@ -13,12 +13,12 @@ const HOUR_LABELS = [
 
 const PERIOD_INFO = [
     { start: 0, end: 5, name: 'Нічна сова', icon: '🌙', color: '#4a3060' },
-    { start: 5, end: 8, name: 'Ранній птах', icon: '🌅', color: '#c4956a' },
-    { start: 8, end: 12, name: 'Ранковий кодер', icon: '☀️', color: '#e8a0b4' },
-    { start: 12, end: 14, name: 'Обідня перерва', icon: '🍱', color: '#4a7c59' },
-    { start: 14, end: 18, name: 'Денний марафон', icon: '⛩️', color: '#b76e79' },
-    { start: 18, end: 22, name: 'Вечірній сеанс', icon: '🏮', color: '#c4956a' },
-    { start: 22, end: 24, name: 'Полуничний кодер', icon: '🌸', color: '#b76e79' },
+    { start: 5, end: 8, name: 'Ранній птах', icon: '🌅', color: '#d29922' },
+    { start: 8, end: 12, name: 'Ранковий кодер', icon: '☀️', color: '#58a6ff' },
+    { start: 12, end: 14, name: 'Обідня перерва', icon: '🍱', color: '#3fb950' },
+    { start: 14, end: 18, name: 'Денний марафон', icon: '⛩️', color: '#1f6feb' },
+    { start: 18, end: 22, name: 'Вечірній сеанс', icon: '🏮', color: '#d29922' },
+    { start: 22, end: 24, name: 'Полуничний кодер', icon: '🌸', color: '#1f6feb' },
 ];
 
 export function CodingRhythm() {
@@ -45,7 +45,7 @@ export function CodingRhythm() {
             <div className="flex justify-center">
                 <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
                     {/* Background ring */}
-                    <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="rgba(232,160,180,0.06)" strokeWidth={outerR - innerR} />
+                    <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="rgba(88, 166, 255,0.06)" strokeWidth={outerR - innerR} />
 
                     {/* Hour bars */}
                     {hours.map((count, i) => {
@@ -108,7 +108,7 @@ export function CodingRhythm() {
                     })}
 
                     {/* Center info */}
-                    <text x={cx} y={cy - 8} textAnchor="middle" fill="#e8a0b4" fontSize="22" fontFamily="'Noto Serif JP', serif" fontWeight="700">
+                    <text x={cx} y={cy - 8} textAnchor="middle" fill="#58a6ff" fontSize="22" fontFamily="'Noto Serif JP', serif" fontWeight="700">
                         {String(peakHour).padStart(2, '0')}:00
                     </text>
                     <text x={cx} y={cy + 10} textAnchor="middle" fill="rgba(255,255,255,0.4)" fontSize="9" fontFamily="'Noto Serif JP', serif">

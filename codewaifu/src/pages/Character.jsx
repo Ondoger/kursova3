@@ -54,10 +54,10 @@ export function CharacterPage() {
   const summaryStats = useMemo(() => {
     if (!stats) return [];
     return [
-      { label: "Коміти", value: stats.totalCommits, kanji: "献" },
-      { label: "Репозиторії", value: stats.totalRepos, kanji: "庫" },
-      { label: "Зірки", value: stats.totalStars, kanji: "星" },
-      { label: "Стрік", value: stats.longestStreak, kanji: "火" },
+      { label: "Коміти", value: stats.totalCommits, kanji: "" },
+      { label: "Репозиторії", value: stats.totalRepos, kanji: "" },
+      { label: "Зірки", value: stats.totalStars, kanji: "" },
+      { label: "Стрік", value: stats.longestStreak, kanji: "" },
     ];
   }, [stats]);
 
@@ -168,7 +168,7 @@ export function CharacterPage() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: "url(/images/jp/temple.jpg)",
+            backgroundImage: "none",
             backgroundSize: "cover",
             backgroundPosition: "center 42%",
             opacity: 0.08,
@@ -221,10 +221,10 @@ export function CharacterPage() {
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-jp-gold/45 font-jp">
-                    時間分析
+                    
                   </p>
                   <h2 className="font-jp font-bold text-2xl neon-text mt-1">
-                    <span className="opacity-40 text-base mr-1">時</span> Ритм
+                    <span className="opacity-40 text-base mr-1"></span> Ритм
                     кодінгу
                   </h2>
                 </div>
@@ -232,7 +232,7 @@ export function CharacterPage() {
               </div>
               <BrushStroke
                 className="w-full h-3 opacity-35 mb-3"
-                color="#b76e79"
+                color="#1f6feb"
               />
               <CodingRhythm />
             </div>
@@ -259,9 +259,9 @@ export function CharacterPage() {
                   </p>
                   <h2
                     className="font-jp font-bold text-2xl text-jp-gold"
-                    style={{ textShadow: "0 0 10px rgba(196,149,106,0.35)" }}
+                    style={{ textShadow: "0 0 10px rgba(210, 153, 34,0.35)" }}
                   >
-                    <span className="opacity-40 text-base mr-1">札</span> Картка
+                    <span className="opacity-40 text-base mr-1"></span> Картка
                     для шерингу
                   </h2>
                 </div>
@@ -275,7 +275,7 @@ export function CharacterPage() {
                     }}
                     placeholder="Ім'я персонажа"
                     className="min-w-0 flex-1 md:w-56 px-3 py-2 rounded-lg bg-white/[0.04] border text-sm focus:outline-none transition-all font-jp text-white/80 placeholder:text-white/25"
-                    style={{ borderColor: "rgba(232,160,180,0.15)" }}
+                    style={{ borderColor: "rgba(88, 166, 255,0.15)" }}
                   />
                   <button
                     onClick={saveName}
@@ -289,7 +289,7 @@ export function CharacterPage() {
                 </div>
               </div>
 
-              <BrushStroke className="w-full h-3 opacity-35" color="#c4956a" />
+              <BrushStroke className="w-full h-3 opacity-35" color="#d29922" />
 
               <ShareableCard
                 user={stats.user}
@@ -326,7 +326,7 @@ export function CharacterPage() {
               className="absolute right-6 top-6 text-7xl font-calligraphy text-jp-sakura/5 pointer-events-none"
               aria-hidden="true"
             >
-              次
+              
             </div>
             <div className="relative z-10 grid lg:grid-cols-[0.85fr_1.15fr] gap-6 items-center">
               <div>
@@ -334,7 +334,7 @@ export function CharacterPage() {
                   Next useful step
                 </p>
                 <h2 className="font-jp font-bold text-2xl neon-text-pink mt-1">
-                  <span className="opacity-40 text-base mr-1">次</span> План
+                  <span className="opacity-40 text-base mr-1"></span> План
                   наступної сесії
                 </h2>
                 <p className="text-sm text-white/45 mt-2 leading-relaxed">
@@ -433,7 +433,7 @@ export function CharacterPage() {
 
       <WavePattern
         className="w-full h-10 mt-6 opacity-60"
-        color="#e8a0b4"
+        color="#58a6ff"
         opacity={0.03}
       />
     </div>

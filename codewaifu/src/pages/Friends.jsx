@@ -21,10 +21,10 @@ import {
 } from "../components/UI/JapaneseDecorations";
 
 const compareKeys = [
-  { key: "totalCommits", label: "Коміти", kanji: "献" },
-  { key: "totalRepos", label: "Репозиторії", kanji: "庫" },
-  { key: "totalStars", label: "Stars", kanji: "星" },
-  { key: "longestStreak", label: "Streak", kanji: "火" },
+  { key: "totalCommits", label: "Коміти", kanji: "" },
+  { key: "totalRepos", label: "Репозиторії", kanji: "" },
+  { key: "totalStars", label: "Stars", kanji: "" },
+  { key: "longestStreak", label: "Streak", kanji: "" },
 ];
 
 export function FriendsPage() {
@@ -135,7 +135,7 @@ export function FriendsPage() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: "url(/images/jp/garden.jpg)",
+            backgroundImage: "none",
             backgroundSize: "cover",
             backgroundPosition: "center 42%",
             opacity: 0.09,
@@ -147,7 +147,7 @@ export function FriendsPage() {
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
           <div>
             <p className="text-xs uppercase tracking-widest text-jp-gold/60 font-jp flex items-center gap-2">
-              <span className="text-jp-sakura/50">友</span>
+              <span className="text-jp-sakura/50"></span>
               Соціальний перегляд GitHub-профілів
             </p>
             <h1 className="font-calligraphy font-black text-4xl md:text-5xl mt-2 leading-tight">
@@ -188,7 +188,7 @@ export function FriendsPage() {
                   Friend list
                 </p>
                 <h2 className="font-jp font-bold text-2xl neon-text-pink mt-1">
-                  <span className="opacity-40 text-base mr-1">友</span> Список
+                  <span className="opacity-40 text-base mr-1"></span> Список
                 </h2>
               </div>
               <span className="text-xs px-2 py-1 rounded-full bg-white/[0.035] border border-white/5 text-white/35 font-mono">
@@ -197,7 +197,7 @@ export function FriendsPage() {
             </div>
             <BrushStroke
               className="w-full h-3 opacity-35 mb-4"
-              color="#b76e79"
+              color="#1f6feb"
             />
 
             {friends.length === 0 ? (
@@ -290,7 +290,7 @@ export function FriendsPage() {
 
       <WavePattern
         className="w-full h-10 mt-6 opacity-60"
-        color="#e8a0b4"
+        color="#58a6ff"
         opacity={0.03}
       />
     </div>
@@ -318,7 +318,7 @@ function FriendProfile({ stats, meta }) {
       <div
         className="absolute inset-x-0 top-0 h-44"
         style={{
-          backgroundImage: "url(/images/jp/fuji.jpg)",
+          backgroundImage: "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.22,
@@ -359,21 +359,21 @@ function FriendProfile({ stats, meta }) {
         </div>
 
         <div className="grid md:grid-cols-4 gap-3 mt-5">
-          <FriendStat label="XP" value={formatNumber(meta.xp)} kanji="経" />
+          <FriendStat label="XP" value={formatNumber(meta.xp)} kanji="" />
           <FriendStat
             label="Коміти"
             value={formatNumber(stats.totalCommits)}
-            kanji="献"
+            kanji=""
           />
           <FriendStat
             label="Stars"
             value={formatNumber(stats.totalStars)}
-            kanji="星"
+            kanji=""
           />
           <FriendStat
             label="Streak"
             value={formatNumber(stats.longestStreak)}
-            kanji="火"
+            kanji=""
           />
         </div>
 
@@ -410,7 +410,7 @@ function ComparePanel({ mine, friend, friendLogin }) {
             Friendly comparison
           </p>
           <h2 className="font-jp font-bold text-2xl neon-text-pink mt-1">
-            <span className="opacity-40 text-base mr-1">比</span> Порівняння
+            <span className="opacity-40 text-base mr-1"></span> Порівняння
           </h2>
         </div>
         <span className="text-xs text-white/30 font-jp">
@@ -436,12 +436,12 @@ function ComparePanel({ mine, friend, friendLogin }) {
                   {formatNumber(mineValue)} / {formatNumber(friendValue)}
                 </span>
               </div>
-              <Bar label="Ти" value={mineValue} max={max} color="#e8a0b4" />
+              <Bar label="Ти" value={mineValue} max={max} color="#58a6ff" />
               <Bar
                 label={`@${friendLogin}`}
                 value={friendValue}
                 max={max}
-                color="#c4956a"
+                color="#d29922"
               />
             </div>
           );

@@ -33,7 +33,7 @@ export function Leaderboard() {
     return (
         <ol className="space-y-2">
             {entries.slice(0, 10).map((e, i) => {
-                const medal = i === 0 ? '#c4956a' : i === 1 ? '#cbd5e1' : i === 2 ? '#b76e79' : null;
+                const medal = i === 0 ? '#d29922' : i === 1 ? '#cbd5e1' : i === 2 ? '#1f6feb' : null;
                 return (
                     <motion.li
                         key={e.login}

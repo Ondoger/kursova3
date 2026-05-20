@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
  * stats values should be 0-100.
  */
 const LABELS = {
-    STR: { full: 'Сила', kanji: '力', color: '#b76e79' },
-    INT: { full: 'Інтелект', kanji: '知', color: '#c4956a' },
-    AGI: { full: 'Спритність', kanji: '速', color: '#4a7c59' },
-    END: { full: 'Витривалість', kanji: '耐', color: '#e8a0b4' },
-    LUK: { full: 'Удача', kanji: '運', color: '#c4956a' },
-    CHA: { full: 'Харизма', kanji: '魅', color: '#b76e79' },
+    STR: { full: 'Сила', kanji: '', color: '#1f6feb' },
+    INT: { full: 'Інтелект', kanji: '', color: '#d29922' },
+    AGI: { full: 'Спритність', kanji: '', color: '#3fb950' },
+    END: { full: 'Витривалість', kanji: '', color: '#58a6ff' },
+    LUK: { full: 'Удача', kanji: '', color: '#d29922' },
+    CHA: { full: 'Харизма', kanji: '', color: '#1f6feb' },
 };
 
 export function RadarChart({ stats, size = 280 }) {
@@ -58,7 +58,7 @@ export function RadarChart({ stats, size = 280 }) {
                         key={i}
                         points={pts}
                         fill="none"
-                        stroke="rgba(232,160,180,0.08)"
+                        stroke="rgba(88, 166, 255,0.08)"
                         strokeWidth={i === rings.length - 1 ? 1.2 : 0.6}
                     />
                 ))}
@@ -68,7 +68,7 @@ export function RadarChart({ stats, size = 280 }) {
                     <line
                         key={i}
                         {...a}
-                        stroke="rgba(196,149,106,0.1)"
+                        stroke="rgba(210, 153, 34,0.1)"
                         strokeWidth="0.6"
                     />
                 ))}
@@ -95,8 +95,8 @@ export function RadarChart({ stats, size = 280 }) {
                         transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
                         cx={x}
                         cy={y}
-                        fill={LABELS[keys[i]]?.color ?? '#e8a0b4'}
-                        stroke="#0d0b0f"
+                        fill={LABELS[keys[i]]?.color ?? '#58a6ff'}
+                        stroke="#0d1117"
                         strokeWidth="2"
                     />
                 ))}
@@ -104,7 +104,7 @@ export function RadarChart({ stats, size = 280 }) {
                 {/* Labels */}
                 {keys.map((k, i) => {
                     const [lx, ly] = pointAt(i, 1.22);
-                    const meta = LABELS[k] ?? { full: k, kanji: '', color: '#e8a0b4' };
+                    const meta = LABELS[k] ?? { full: k, kanji: '', color: '#58a6ff' };
                     return (
                         <g key={k}>
                             <text
@@ -137,14 +137,14 @@ export function RadarChart({ stats, size = 280 }) {
                 {/* Gradients */}
                 <defs>
                     <linearGradient id="radarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#e8a0b4" stopOpacity="0.2" />
-                        <stop offset="50%" stopColor="#c4956a" stopOpacity="0.15" />
-                        <stop offset="100%" stopColor="#b76e79" stopOpacity="0.25" />
+                        <stop offset="0%" stopColor="#58a6ff" stopOpacity="0.2" />
+                        <stop offset="50%" stopColor="#d29922" stopOpacity="0.15" />
+                        <stop offset="100%" stopColor="#1f6feb" stopOpacity="0.25" />
                     </linearGradient>
                     <linearGradient id="radarStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#e8a0b4" stopOpacity="0.8" />
-                        <stop offset="50%" stopColor="#c4956a" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="#b76e79" stopOpacity="0.8" />
+                        <stop offset="0%" stopColor="#58a6ff" stopOpacity="0.8" />
+                        <stop offset="50%" stopColor="#d29922" stopOpacity="0.6" />
+                        <stop offset="100%" stopColor="#1f6feb" stopOpacity="0.8" />
                     </linearGradient>
                 </defs>
             </svg>

@@ -40,17 +40,17 @@ export function CommitHeatmap() {
         if (count <= 0) return 'rgba(255,255,255,0.04)';
         const ratio = max ? Math.min(1, count / max) : 0;
         const intensity = 0.3 + ratio * 0.7;
-        if (ratio < 0.25) return `rgba(196, 149, 106, ${intensity})`;   // gold
-        if (ratio < 0.5) return `rgba(183, 110, 121, ${intensity})`;    // sakura-dark
-        if (ratio < 0.75) return `rgba(232, 160, 180, ${intensity})`;   // sakura
-        return `rgba(179, 58, 58, ${intensity})`;                        // red accent
+        if (ratio < 0.25) return `rgba(210, 153, 34, ${intensity})`;   // gold
+        if (ratio < 0.5) return `rgba(31, 111, 235, ${intensity})`;    // sakura-dark
+        if (ratio < 0.75) return `rgba(88, 166, 255, ${intensity})`;   // sakura
+        return `rgba(248, 81, 73, ${intensity})`;                        // red accent
     };
 
     const shadowFor = (count) => {
         if (count <= 0) return 'none';
         const ratio = max ? Math.min(1, count / max) : 0;
-        if (ratio < 0.5) return `0 0 4px rgba(196,149,106,0.4)`;
-        return `0 0 6px rgba(232,160,180,0.5), 0 0 12px rgba(183,110,121,0.3)`;
+        if (ratio < 0.5) return `0 0 4px rgba(210, 153, 34,0.4)`;
+        return `0 0 6px rgba(88, 166, 255,0.5), 0 0 12px rgba(31, 111, 235,0.3)`;
     };
 
     return (
@@ -58,7 +58,7 @@ export function CommitHeatmap() {
             <div className="flex items-center justify-between">
                 <div>
                     <h3 className="font-jp font-bold text-lg neon-text">
-                        <span className="opacity-40 text-sm mr-1">献</span> Контриб'юшени
+                        <span className="opacity-40 text-sm mr-1"></span> Контриб'юшени
                     </h3>
                     <p className="text-xs text-white/40">
                         Останні {WEEKS} тижнів &middot; активних подій: {totals}
@@ -75,10 +75,10 @@ export function CommitHeatmap() {
                                     r === 0
                                         ? 'rgba(255,255,255,0.04)'
                                         : r < 0.4
-                                            ? `rgba(196, 149, 106, ${0.3 + r * 0.7})`
+                                            ? `rgba(210, 153, 34, ${0.3 + r * 0.7})`
                                             : r < 0.75
-                                                ? `rgba(232, 160, 180, ${0.3 + r * 0.7})`
-                                                : `rgba(179, 58, 58, ${0.3 + r * 0.7})`,
+                                                ? `rgba(88, 166, 255, ${0.3 + r * 0.7})`
+                                                : `rgba(248, 81, 73, ${0.3 + r * 0.7})`,
                             }}
                         />
                     ))}

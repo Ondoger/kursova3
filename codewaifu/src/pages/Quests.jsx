@@ -16,15 +16,15 @@ import {
 } from "../components/UI/JapaneseDecorations";
 
 const CATEGORIES = [
-  { id: "daily", label: "Денні", kanji: "日", note: "скидаються щодня" },
+  { id: "daily", label: "Денні", kanji: "", note: "скидаються щодня" },
   {
     id: "weekly",
     label: "Тижневі",
-    kanji: "週",
+    kanji: "",
     note: "скидаються щопонеділка",
   },
-  { id: "monthly", label: "Місячні", kanji: "月", note: "скидаються щомісяця" },
-  { id: "global", label: "Глобальні", kanji: "永", note: "одноразові" },
+  { id: "monthly", label: "Місячні", kanji: "", note: "скидаються щомісяця" },
+  { id: "global", label: "Глобальні", kanji: "", note: "одноразові" },
 ];
 
 export function QuestsPage() {
@@ -110,7 +110,7 @@ export function QuestsPage() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
-          className="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-bg-900/90 border border-jp-sakura/25 text-sm text-white/80 font-jp shadow-[0_0_24px_rgba(232,160,180,0.18)]"
+          className="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-bg-900/90 border border-jp-sakura/25 text-sm text-white/80 font-jp shadow-[0_0_24px_rgba(88, 166, 255,0.18)]"
         >
           {toast}
         </motion.div>
@@ -124,7 +124,7 @@ export function QuestsPage() {
         <div
           className="absolute inset-0 -z-10"
           style={{
-            backgroundImage: "url(/images/jp/torii.jpg)",
+            backgroundImage: "none",
             backgroundSize: "cover",
             backgroundPosition: "center 45%",
             opacity: 0.08,
@@ -136,7 +136,7 @@ export function QuestsPage() {
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
           <div>
             <p className="text-xs uppercase tracking-widest text-jp-gold/60 font-jp flex items-center gap-2">
-              <span className="text-jp-sakura/50">任</span>
+              <span className="text-jp-sakura/50"></span>
               Квести за реальну GitHub-активність
             </p>
             <h1 className="font-calligraphy font-black text-4xl md:text-5xl mt-2 leading-tight">
@@ -149,9 +149,9 @@ export function QuestsPage() {
           </div>
 
           <div className="grid grid-cols-3 gap-2 min-w-[280px]">
-            <HeaderStat label="Баланс" value={formatNumber(coins)} kanji="硬" />
-            <HeaderStat label="Готово" value={completedCount} kanji="済" />
-            <HeaderStat label="Забрано" value={claimedCount} kanji="取" />
+            <HeaderStat label="Баланс" value={formatNumber(coins)} kanji="" />
+            <HeaderStat label="Готово" value={completedCount} kanji="" />
+            <HeaderStat label="Забрано" value={claimedCount} kanji="" />
           </div>
         </div>
       </motion.section>
@@ -166,7 +166,7 @@ export function QuestsPage() {
             <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
               <div>
                 <h2 className="font-jp font-bold text-2xl neon-text-pink">
-                  <span className="opacity-40 text-base mr-1">巻</span> Дошка
+                  <span className="opacity-40 text-base mr-1"></span> Дошка
                   завдань
                 </h2>
                 <p className="text-sm text-white/40 mt-1">
@@ -257,9 +257,9 @@ export function QuestsPage() {
                   </p>
                   <h2
                     className="font-jp font-bold text-2xl text-jp-gold"
-                    style={{ textShadow: "0 0 10px rgba(196,149,106,0.35)" }}
+                    style={{ textShadow: "0 0 10px rgba(210, 153, 34,0.35)" }}
                   >
-                    <span className="opacity-40 text-base mr-1">店</span>{" "}
+                    <span className="opacity-40 text-base mr-1"></span>{" "}
                     Магазин титулів
                   </h2>
                 </div>
@@ -272,7 +272,7 @@ export function QuestsPage() {
               </div>
               <BrushStroke
                 className="w-full h-3 opacity-35 mb-4"
-                color="#c4956a"
+                color="#d29922"
               />
 
               <div className="space-y-3">
@@ -285,7 +285,7 @@ export function QuestsPage() {
                       key={item.id}
                       className={`rounded-2xl border p-3 bg-white/[0.025] transition-all ${
                         active
-                          ? "border-jp-sakura/35 shadow-[0_0_18px_rgba(232,160,180,0.12)]"
+                          ? "border-jp-sakura/35 shadow-[0_0_18px_rgba(88, 166, 255,0.12)]"
                           : "border-white/5"
                       }`}
                     >
@@ -299,7 +299,7 @@ export function QuestsPage() {
                               {item.title}
                             </h3>
                             <span className="text-[10px] text-jp-gold font-mono whitespace-nowrap">
-                              {item.price} 硬
+                              {item.price} 
                             </span>
                           </div>
                           <p className="text-xs text-white/38 mt-1 leading-relaxed">
@@ -339,7 +339,7 @@ export function QuestsPage() {
 
       <WavePattern
         className="w-full h-10 mt-6 opacity-60"
-        color="#e8a0b4"
+        color="#58a6ff"
         opacity={0.03}
       />
     </div>
@@ -369,7 +369,7 @@ function QuestCard({ quest, index, claimed, onClaim }) {
         claimed
           ? "bg-jp-gold/[0.035] border-jp-gold/18 opacity-75"
           : quest.completed
-            ? "bg-jp-sakura/[0.045] border-jp-sakura/18 shadow-[0_0_18px_rgba(232,160,180,0.08)]"
+            ? "bg-jp-sakura/[0.045] border-jp-sakura/18 shadow-[0_0_18px_rgba(88, 166, 255,0.08)]"
             : "bg-white/[0.025] border-white/5"
       }`}
     >
@@ -381,7 +381,7 @@ function QuestCard({ quest, index, claimed, onClaim }) {
           <div className="flex flex-wrap items-center gap-2">
             <h3 className="font-jp font-bold text-white/85">{quest.title}</h3>
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-jp-gold/10 border border-jp-gold/20 text-jp-gold font-mono">
-              +{quest.reward} 硬
+              +{quest.reward} 
             </span>
             {claimed && (
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/[0.035] border border-white/5 text-white/35 font-jp">
@@ -409,10 +409,10 @@ function QuestCard({ quest, index, claimed, onClaim }) {
                 className="h-full rounded-full"
                 style={{
                   background: quest.completed
-                    ? "linear-gradient(90deg, #c4956a, #e8a0b4)"
-                    : "linear-gradient(90deg, rgba(196,149,106,0.35), rgba(232,160,180,0.35))",
+                    ? "linear-gradient(90deg, #d29922, #58a6ff)"
+                    : "linear-gradient(90deg, rgba(210, 153, 34,0.35), rgba(88, 166, 255,0.35))",
                   boxShadow: quest.completed
-                    ? "0 0 10px rgba(232,160,180,0.35)"
+                    ? "0 0 10px rgba(88, 166, 255,0.35)"
                     : "none",
                 }}
               />

@@ -4,12 +4,12 @@ import { useStore } from '../../store/useStore';
 import { computeRPGStats } from '../../utils/gamification';
 
 const STAT_META = {
-    STR: { label: 'STR', kanji: '力', color: '#b76e79', description: 'Сила — частота коммітів' },
-    INT: { label: 'INT', kanji: '知', color: '#c4956a', description: 'Інтелект — кількість мов' },
-    AGI: { label: 'AGI', kanji: '速', color: '#4a7c59', description: 'Спритність — швидкість PR' },
-    END: { label: 'END', kanji: '耐', color: '#e8a0b4', description: 'Витривалість — стрік' },
-    LUK: { label: 'LUK', kanji: '運', color: '#c4956a', description: 'Удача — зірки + фолловери' },
-    CHA: { label: 'CHA', kanji: '魅', color: '#b76e79', description: 'Харизма — фолловери + форки' },
+    STR: { label: 'STR', kanji: '', color: '#1f6feb', description: 'Сила — частота коммітів' },
+    INT: { label: 'INT', kanji: '', color: '#d29922', description: 'Інтелект — кількість мов' },
+    AGI: { label: 'AGI', kanji: '', color: '#3fb950', description: 'Спритність — швидкість PR' },
+    END: { label: 'END', kanji: '', color: '#58a6ff', description: 'Витривалість — стрік' },
+    LUK: { label: 'LUK', kanji: '', color: '#d29922', description: 'Удача — зірки + фолловери' },
+    CHA: { label: 'CHA', kanji: '', color: '#1f6feb', description: 'Харизма — фолловери + форки' },
 };
 
 export function CharacterStats() {

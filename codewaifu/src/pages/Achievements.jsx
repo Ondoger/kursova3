@@ -57,7 +57,7 @@ export function AchievementsPage() {
                 <div
                     className="absolute inset-0 -z-10"
                     style={{
-                        backgroundImage: 'url(/images/jp/fuji.jpg)',
+                        backgroundImage: 'none',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center 60%',
                         opacity: 0.06,
@@ -68,7 +68,7 @@ export function AchievementsPage() {
                 <div className="flex items-end justify-between gap-4 flex-wrap relative z-10">
                     <div>
                         <p className="text-xs uppercase tracking-widest text-jp-gold/60 font-jp flex items-center gap-2">
-                            <span className="text-jp-sakura/40">功</span> Achievements
+                            <span className="text-jp-sakura/40"></span> Achievements
                         </p>
                         <h1 className="font-jp font-black text-3xl md:text-4xl mt-1">
                             <span className="text-gradient-jp">Зал слави</span>
@@ -99,8 +99,8 @@ export function AchievementsPage() {
                             transition={{ duration: 1.4, ease: 'easeOut' }}
                             className="h-full rounded-full"
                             style={{
-                                background: 'linear-gradient(90deg, #c4956a, #e8a0b4, #b76e79)',
-                                boxShadow: '0 0 12px rgba(232,160,180,0.5), 0 0 24px rgba(196,149,106,0.3)',
+                                background: 'linear-gradient(90deg, #d29922, #58a6ff, #1f6feb)',
+                                boxShadow: '0 0 12px rgba(88, 166, 255,0.5), 0 0 24px rgba(210, 153, 34,0.3)',
                             }}
                         />
                     </div>
@@ -115,7 +115,7 @@ export function AchievementsPage() {
                         onClick={() => setFilter(f.id)}
                         className={`px-3 py-1.5 rounded-full border text-xs font-jp tracking-widest transition-all ${
                             filter === f.id
-                                ? 'bg-jp-sakura/15 border-jp-sakura/40 text-white shadow-[0_0_12px_rgba(232,160,180,0.2)]'
+                                ? 'bg-jp-sakura/15 border-jp-sakura/40 text-white shadow-[0_0_12px_rgba(88, 166, 255,0.2)]'
                                 : 'border-white/10 bg-white/[0.02] text-white/60 hover:text-white hover:border-jp-sakura/20'
                         }`}
                     >
@@ -142,7 +142,7 @@ export function AchievementsPage() {
                 )}
             </div>
 
-            <WavePattern className="w-full h-10 mt-6 opacity-60" color="#c4956a" opacity={0.03} />
+            <WavePattern className="w-full h-10 mt-6 opacity-60" color="#d29922" opacity={0.03} />
         </div>
     );
 }

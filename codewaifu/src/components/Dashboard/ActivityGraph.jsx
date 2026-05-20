@@ -25,14 +25,14 @@ export function ActivityGraph() {
                 <AreaChart data={data} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                     <defs>
                         <linearGradient id="colorActivity" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#e8a0b4" stopOpacity={0.8} />
-                            <stop offset="50%" stopColor="#b76e79" stopOpacity={0.4} />
-                            <stop offset="100%" stopColor="#c4956a" stopOpacity={0.05} />
+                            <stop offset="0%" stopColor="#58a6ff" stopOpacity={0.8} />
+                            <stop offset="50%" stopColor="#1f6feb" stopOpacity={0.4} />
+                            <stop offset="100%" stopColor="#d29922" stopOpacity={0.05} />
                         </linearGradient>
                         <linearGradient id="strokeActivity" x1="0" y1="0" x2="1" y2="0">
-                            <stop offset="0%" stopColor="#c4956a" />
-                            <stop offset="50%" stopColor="#e8a0b4" />
-                            <stop offset="100%" stopColor="#b76e79" />
+                            <stop offset="0%" stopColor="#d29922" />
+                            <stop offset="50%" stopColor="#58a6ff" />
+                            <stop offset="100%" stopColor="#1f6feb" />
                         </linearGradient>
                     </defs>
                     <CartesianGrid stroke="rgba(255,255,255,0.04)" strokeDasharray="3 3" />
@@ -40,23 +40,23 @@ export function ActivityGraph() {
                         dataKey="name"
                         stroke="rgba(255,255,255,0.35)"
                         tick={{ fontSize: 11, fontFamily: '"Noto Serif JP", serif' }}
-                        axisLine={{ stroke: 'rgba(232,160,180,0.1)' }}
+                        axisLine={{ stroke: 'rgba(88, 166, 255,0.1)' }}
                     />
                     <YAxis
                         stroke="rgba(255,255,255,0.35)"
                         tick={{ fontSize: 11, fontFamily: '"Noto Serif JP", serif' }}
-                        axisLine={{ stroke: 'rgba(232,160,180,0.1)' }}
+                        axisLine={{ stroke: 'rgba(88, 166, 255,0.1)' }}
                         width={32}
                     />
                     <Tooltip
                         contentStyle={{
                             background: 'rgba(13,11,15,0.95)',
-                            border: '1px solid rgba(232,160,180,0.25)',
+                            border: '1px solid rgba(88, 166, 255,0.25)',
                             borderRadius: 12,
                             color: '#fff',
                             backdropFilter: 'blur(12px)',
                         }}
-                        labelStyle={{ color: '#e8a0b4', fontFamily: '"Noto Serif JP", serif' }}
+                        labelStyle={{ color: '#58a6ff', fontFamily: '"Noto Serif JP", serif' }}
                         formatter={(v) => [`${v} коммітів`, '']}
                     />
                     <Area
@@ -66,8 +66,8 @@ export function ActivityGraph() {
                         strokeWidth={3}
                         fill="url(#colorActivity)"
                         animationDuration={1400}
-                        dot={{ stroke: '#e8a0b4', fill: '#0d0b0f', strokeWidth: 2, r: 4 }}
-                        activeDot={{ r: 6, stroke: '#b76e79', fill: '#0d0b0f' }}
+                        dot={{ stroke: '#58a6ff', fill: '#0d1117', strokeWidth: 2, r: 4 }}
+                        activeDot={{ r: 6, stroke: '#1f6feb', fill: '#0d1117' }}
                     />
                 </AreaChart>
             </ResponsiveContainer>

@@ -64,7 +64,7 @@ export function VideoCharacter({ height = "40vh", showHud = true }) {
       <div
         className="absolute inset-0 -z-10"
         style={{
-          background: `radial-gradient(ellipse at center, ${tier.accent}15, transparent 65%), linear-gradient(180deg, #0d0b0f 0%, #14100e 100%)`,
+          background: `radial-gradient(ellipse at center, ${tier.accent}15, transparent 65%), linear-gradient(180deg, #0d1117 0%, #161b22 100%)`,
         }}
       />
 

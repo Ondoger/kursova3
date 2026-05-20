@@ -27,10 +27,10 @@ const LANG_COLORS = {
     Elixir: '#6e4a7e',
 };
 const FALLBACK_PALETTE = [
-    '#e8a0b4',
-    '#c4956a',
-    '#b76e79',
-    '#4a7c59',
+    '#58a6ff',
+    '#d29922',
+    '#1f6feb',
+    '#3fb950',
     '#d4a574',
     '#9e7b6b',
     '#c08090',
@@ -72,7 +72,7 @@ export function LanguageChart() {
             </Pie>
             <Tooltip contentStyle={{
             background: 'rgba(13,11,15,0.95)',
-            border: '1px solid rgba(232,160,180,0.2)',
+            border: '1px solid rgba(88, 166, 255,0.2)',
             borderRadius: 12,
             color: '#fff',
             backdropFilter: 'blur(12px)',
