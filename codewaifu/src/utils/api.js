@@ -16,6 +16,30 @@ export class ApiError extends Error {
   }
 }
 
+function errorMessage(value, fallback = "Помилка запиту") {
+  if (!value) return fallback;
+  if (typeof value === "string") return value;
+  if (value instanceof Error) return value.message || fallback;
+  if (Array.isArray(value)) {
+    return value.map((item) => errorMessage(item, "")).filter(Boolean).join("; ") || fallback;
+  }
+  if (typeof value === "object") {
+    const nested =
+      value.error ??
+      value.message ??
+      value.detail ??
+      value.reason ??
+      value.issues?.[0]?.message;
+    if (nested && nested !== value) return errorMessage(nested, fallback);
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return fallback;
+    }
+  }
+  return String(value);
+}
+
 async function request(path, { method = "GET", body, headers, ...rest } = {}) {
   const init = {
     method,
@@ -43,10 +67,12 @@ async function request(path, { method = "GET", body, headers, ...rest } = {}) {
   const ct = res.headers.get("Content-Type") || "";
   if (ct.includes("application/json")) {
     try { data = await res.json(); } catch { data = null; }
+  } else {
+    try { data = await res.text(); } catch { data = null; }
   }
 
   if (!res.ok) {
-    const message = data?.error || `HTTP ${res.status}`;
+    const message = errorMessage(data?.error ?? data, `HTTP ${res.status}`);
     throw new ApiError(message, { status: res.status, data });
   }
   return data;

@@ -37,22 +37,32 @@ function matchRoute(requestPath) {
 }
 
 export default async function apiRouter(req, res) {
-  const requestPath = getRequestPath(req);
-  const match = matchRoute(requestPath);
+  try {
+    const requestPath = getRequestPath(req);
+    const match = matchRoute(requestPath);
 
-  if (!match) {
-    return res.status(404).json({ error: `No API route for /api/${requestPath}` });
+    if (!match) {
+      return res.status(404).json({ error: `No API route for /api/${requestPath}` });
+    }
+
+    req.query = {
+      ...(req.query || {}),
+      ...match.params,
+    };
+    delete req.query.path;
+
+    if (typeof match.handler !== "function") {
+      return res.status(500).json({ error: `Handler for /api/${requestPath} has no default export` });
+    }
+
+    return match.handler(req, res);
+  } catch (err) {
+    console.error("[api-router] unhandled error:", err);
+    if (!res.headersSent) {
+      return res.status(500).json({
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
+    return res.end();
   }
-
-  req.query = {
-    ...(req.query || {}),
-    ...match.params,
-  };
-  delete req.query.path;
-
-  if (typeof match.handler !== "function") {
-    return res.status(500).json({ error: `Handler for /api/${requestPath} has no default export` });
-  }
-
-  return match.handler(req, res);
 }
